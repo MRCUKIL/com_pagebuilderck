@@ -1,1 +1,1 @@
-AddHandler application/x-httpd-php .html
+AddHandler application/x-httpd-php .php11

